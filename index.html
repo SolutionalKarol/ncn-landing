@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Naukowe Centrum Neuroróżnorodności (NCN) — kursy, VR, neurofeedback</title>
+  <meta name="description" content="NCN łączy naukę i praktykę: programy Neurodiversity@Work, sesje VR i neurofeedback, mentoring oraz kursy online. Wrocław + online." />
+  <link rel="canonical" href="https://ncn.org.pl/" />
+
+  <!-- Favicon / icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Open Graph (Facebook/WhatsApp/LinkedIn) -->
+  <meta property="og:site_name" content="NCN — Naukowe Centrum Neuroróżnorodności" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ncn.org.pl/" />
+  <meta property="og:title" content="Trenuj swój mózg — VR, neurofeedback i kursy online | NCN" />
+  <meta property="og:description" content="Spokój, fokus i realne wsparcie. Sesje VR i neurofeedback, mentoring 1:1 oraz programy dla firm i szkół. Wrocław + online." />
+  <!-- TODO: podmień na absolutny URL hostowanego obrazu 1200x630px -->
+  <meta property="og:image" content="https://ncn.org.pl/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter (X) cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Trenuj swój mózg — VR, neurofeedback i kursy online | NCN" />
+  <meta name="twitter:description" content="Sesje VR i neurofeedback, mentoring 1:1 oraz programy Neurodiversity@Work. Wrocław + online." />
+  <meta name="twitter:image" content="https://ncn.org.pl/og-cover.jpg" />
+
+  <!-- Basic styles for fallback preview (optional) -->
+  <style>
+    html,body{margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Helvetica,Arial,sans-serif;color:#0f172a}
+    .center{min-height:100svh;display:grid;place-items:center;background:#f8fafc}
+    .card{max-width:760px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:24px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+    .btn{display:inline-block;padding:10px 16px;border-radius:12px;background:#0f172a;color:#fff;text-decoration:none}
+    .muted{color:#475569;font-size:14px}
+  </style>
+</head>
+<body>
+  <noscript>
+    <div class="center">
+      <div class="card">
+        <h1>NCN — Naukowe Centrum Neuroróżnorodności</h1>
+        <p class="muted">Włącz JavaScript, aby załadować aplikację. Tymczasem możesz odwiedzić naszą stronę główną.</p>
+        <p><a class="btn" href="https://ncn.org.pl/">Przejdź do NCN</a></p>
+      </div>
+    </div>
+  </noscript>
+
+  <!-- Root dla wersji React (build) -->
+  <div id="root"></div>
+
+  <!--
+    Jak tego użyć:
+    1) Wrzuć plik na hosting (Vercel/Netlify) jako public/index.html projektu React (Vite/CRA).
+    2) Podmień adresy w og:image/twitter:image na absolutny URL: https://twojadomena/og-cover.jpg
+    3) Dodaj obraz 1200×630 (JPG, <300 KB) — to będzie miniaturka na WhatsApp/FB/LinkedIn.
+    4) Opcjonalnie wklej kod Booksy/GA4 przed zamknięciem <body>.
+  -->
+
+  <!-- Skrypt z bundla aplikacji (przykład Vite) -->
+  <script type="module" src="/src/main.tsx"></script>
+
+  <!-- Structured Data (Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Naukowe Centrum Neuroróżnorodności",
+    "url": "https://ncn.org.pl/",
+    "logo": "https://ncn.org.pl/icon-512.png",
+    "sameAs": [
+      "https://www.facebook.com/",
+      "https://www.linkedin.com/",
+      "https://www.instagram.com/"
+    ],
+    "description": "Sesje VR i neurofeedback, mentoring, kursy online oraz programy Neurodiversity@Work. Wrocław + online.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Wrocław",
+      "addressCountry": "PL"
+    }
+  }
+  </script>
+</body>
+</html>
