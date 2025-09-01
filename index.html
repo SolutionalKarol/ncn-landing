@@ -19,77 +19,110 @@
   <meta name="twitter:description" content="Sesje VR i neurofeedback, mentoring 1:1 oraz programy Neurodiversity@Work. Wrocław + online." />
   <meta name="twitter:image" content="https://solutionalkarol.github.io/ncn-landing/og-cover.jpg" />
 
-  <!-- Favicon (inline, działa od razu) -->
+  <!-- Favicon inline (bez plików) -->
   <link rel="icon" href='data:image/svg+xml;utf8,
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-    <defs>
-      <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#06b6d4"/>
-        <stop offset="100%" stop-color="#0f172a"/>
-      </linearGradient>
-    </defs>
+    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#0f172a"/></linearGradient></defs>
     <circle cx="24" cy="24" r="22" fill="url(#g)" stroke="#0f172a" stroke-width="2"/>
-    <circle cx="17" cy="20" r="2.2" fill="#fff"/>
-    <circle cx="31" cy="20" r="2.2" fill="#fff"/>
-    <circle cx="24" cy="28" r="2.2" fill="#fff"/>
+    <circle cx="17" cy="20" r="2.2" fill="#fff"/><circle cx="31" cy="20" r="2.2" fill="#fff"/><circle cx="24" cy="28" r="2.2" fill="#fff"/>
     <path d="M17 20 L24 28 L31 20" stroke="#fff" stroke-width="1.8" fill="none"/>
     <path d="M12 22c0-7 6-10 12-10s12 3 12 10c0 5-4 9-12 9s-12-4-12-9z" stroke="#fff" stroke-width="1.4" fill="none" opacity=".6"/>
   </svg>' />
 
   <style>
-    :root{--ink:#0f172a;--muted:#475569;--line:#e5e7eb;--brand:#0f172a}
+    :root{
+      --ink:#0f172a;--muted:#475569;--line:#e5e7eb;--brand:#0f172a;--bg:#ffffff;--bg-sub:#f8fafc
+    }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Helvetica,Arial,sans-serif;
+      color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5
+    }
     a{color:inherit}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;background:rgba(255,255,255,.9);border-bottom:1px solid var(--line);z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .nav a{font-size:14px;margin-left:16px;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    header{
+      position:sticky;top:0;background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(180%) blur(8px);
+      border-bottom:1px solid var(--line);z-index:50
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .brand .title{display:flex;flex-direction:column;line-height:1.05}
+    .brand .title b{letter-spacing:.4px}
+    .menu{display:flex;align-items:center;gap:16px}
+    .menu a{text-decoration:none;font-size:14px}
+    .hamb{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 12px}
     .btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none}
     .btn.primary{background:var(--brand);color:#fff}
+    .btn.ghost{border:1px solid var(--line);background:#fff}
     .hero{position:relative;overflow:hidden}
-    .hero .bg{position:absolute;inset:0;opacity:.35;background:radial-gradient(40rem 40rem at 120% -10%, #a7f3d0 0%, transparent 60%), radial-gradient(40rem 40rem at -10% 10%, #93c5fd 0%, transparent 60%)}
-    .hero .inner{padding:72px 0}
-    h1{font-size:40px;line-height:1.1;margin:0 0 16px}
-    p.lead{font-size:18px;color:var(--muted);max-width:700px}
-    section{padding:56px 0}
-    .grid{display:grid;gap:20px}
-    .cards-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .card{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+    .hero .bg{position:absolute;inset:0;opacity:.35;background:
+      radial-gradient(40rem 40rem at 120% -10%, #a7f3d0 0%, transparent 60%),
+      radial-gradient(40rem 40rem at -10% 10%, #93c5fd 0%, transparent 60%)}
+    .hero .inner{padding:56px 0}
+    h1{font-size:40px;line-height:1.15;margin:0 0 16px}
+    p.lead{font-size:18px;color:var(--muted);max-width:700px;margin:0}
+    section{padding:48px 0}
+    .grid{display:grid;gap:16px}
+    .cards-3{grid-template-columns:repeat(1,minmax(0,1fr))}
+    .card{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff;box-shadow:0 1px 2px rgba(16,24,40,.04)}
     .muted{color:var(--muted)}
-    .avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#0f172a,#06b6d4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;border:1px solid var(--line);box-shadow:0 1px 2px rgba(16,24,40,.08)}
+    .stack{display:flex;flex-wrap:wrap;gap:10px}
+    .avatar{width:56px;height:56px;border-radius:50%;
+      background:linear-gradient(135deg,#0f172a,#06b6d4);
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:800;font-size:18px;border:1px solid var(--line);
+      box-shadow:0 1px 2px rgba(16,24,40,.08)}
+    .section-muted{background:var(--bg-sub);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+    /* --- Tablet --- */
+    @media (min-width:640px){
+      .container{padding:0 20px}
+      .hero .inner{padding:72px 0}
+      h1{font-size:44px}
+      .cards-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .btn.full-sm{width:auto}
+    }
+    /* --- Desktop --- */
+    @media (min-width:960px){
+      .cards-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+      h1{font-size:48px}
+    }
+    /* --- Mobile tweaks --- */
+    @media (max-width:639px){
+      h1{font-size:30px}
+      .menu{display:none}
+      .menu.open{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:12px 0}
+      .hamb{display:inline-block}
+      .btn{padding:12px 16px}
+      .btn.full-sm{width:100%;text-align:center}
+      header .nav{height:auto;padding:10px 0}
+      .hero .inner{padding:40px 0}
+      section{padding:40px 0}
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a href="#hero" style="font-weight:600; text-decoration:none">
-        <div style="display:flex; align-items:center; gap:10px">
-          <!-- Ikona mózgu (SVG inline) -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
-            <defs>
-              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#06b6d4" />
-                <stop offset="100%" stop-color="#0f172a" />
-              </linearGradient>
-            </defs>
-            <circle cx="24" cy="24" r="22" fill="url(#g)" stroke="#0f172a" stroke-width="2" />
-            <circle cx="17" cy="20" r="2.2" fill="#ffffff"/>
-            <circle cx="31" cy="20" r="2.2" fill="#ffffff"/>
-            <circle cx="24" cy="28" r="2.2" fill="#ffffff"/>
-            <path d="M17 20 L24 28 L31 20" stroke="#ffffff" stroke-width="1.8" fill="none" />
-            <path d="M12 22c0-7 6-10 12-10s12 3 12 10c0 5-4 9-12 9s-12-4-12-9z" stroke="#ffffff" stroke-width="1.4" fill="none" opacity=".6"/>
-          </svg>
-
-          <!-- NCN + pełna nazwa -->
-          <div style="display:flex; flex-direction:column; line-height:1.05">
-            <span style="font-weight:800; letter-spacing:.4px; font-size:16px">NCN</span>
-            <span style="font-size:11px; color:#475569">Naukowe Centrum Neuroróżnorodności</span>
-          </div>
-        </div>
+      <a href="#hero" class="brand">
+        <!-- Ikona mózgu (SVG inline) -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+          <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#06b6d4" /><stop offset="100%" stop-color="#0f172a" /></linearGradient></defs>
+          <circle cx="24" cy="24" r="22" fill="url(#g)" stroke="#0f172a" stroke-width="2" />
+          <circle cx="17" cy="20" r="2.2" fill="#ffffff"/><circle cx="31" cy="20" r="2.2" fill="#ffffff"/><circle cx="24" cy="28" r="2.2" fill="#ffffff"/>
+          <path d="M17 20 L24 28 L31 20" stroke="#ffffff" stroke-width="1.8" fill="none" />
+          <path d="M12 22c0-7 6-10 12-10s12 3 12 10c0 5-4 9-12 9s-12-4-12-9z" stroke="#ffffff" stroke-width="1.4" fill="none" opacity=".6"/>
+        </svg>
+        <span class="title">
+          <b>NCN</b>
+          <small style="color:var(--muted);font-size:11px">Naukowe Centrum Neuroróżnorodności</small>
+        </span>
       </a>
-      <nav class="hide-sm">
+
+      <button class="hamb" id="hamb" aria-label="Menu">Menu</button>
+      <nav class="menu" id="menu">
         <a href="#why">Dlaczego my</a>
         <a href="#therapy">Terapie</a>
         <a href="#services">Oferta</a>
@@ -102,21 +135,122 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section id="hero" class="hero">
       <div class="bg"></div>
       <div class="container inner">
         <h1>Spokój, fokus i realne wsparcie. Nauka + praktyka dla Ciebie i Twojego zespołu.</h1>
         <p class="lead">Programy Neurodiversity@Work, sesje VR i neurofeedback, mentoring 1:1 oraz kursy online. Wszystko w jednym miejscu — <strong>NCN</strong>.</p>
-        <div style="margin-top:20px" class="stack">
-          <a class="btn primary" href="#therapy">Umów terapię / sesję</a>
-          <a class="btn ghost" href="#services">Oferta dla firm i szkół</a>
+        <div style="margin-top:18px" class="stack">
+          <a class="btn primary full-sm" href="#therapy">Umów terapię / sesję</a>
+          <a class="btn ghost full-sm" href="#services">Oferta dla firm i szkół</a>
         </div>
-        <div class="muted" style="margin-top:12px;font-size:14px">Współpraca: Politechnika Wrocławska • Partnerzy biznesowi • NGO</div>
+        <div class="muted" style="margin-top:10px;font-size:14px">Współpraca: Politechnika Wrocławska • Partnerzy biznesowi • NGO</div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="section-muted" style="padding:14px 0">
+      <div class="container" style="display:flex;flex-wrap:wrap;gap:8px">
+        <span class="btn ghost" style="padding:6px 10px;font-size:12px">EEG/HRV-ready</span>
+        <span class="btn ghost" style="padding:6px 10px;font-size:12px">VR mindfulness</span>
+        <span class="btn ghost" style="padding:6px 10px;font-size:12px">Neurodiversity-affirming</span>
+        <span class="btn ghost" style="padding:6px 10px;font-size:12px">On-site & online</span>
+        <span class="btn ghost" style="padding:6px 10px;font-size:12px">PL/EN</span>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="why">
+      <div class="container grid cards-3">
+        <div class="card">
+          <div class="muted" style="text-transform:uppercase;font-size:12px">Filary</div>
+          <h3>Nauka</h3>
+          <p class="muted">Zaplecze badawcze i dydaktyczne – wiarygodność, metodologia, mierzalne wyniki.</p>
+        </div>
+        <div class="card">
+          <div class="muted" style="text-transform:uppercase;font-size:12px">Filary</div>
+          <h3>Technologia</h3>
+          <p class="muted">Neurofeedback, VR, AI i biofeedback – realne narzędzia regulacji i rozwoju.</p>
+        </div>
+        <div class="card">
+          <div class="muted" style="text-transform:uppercase;font-size:12px">Filary</div>
+          <h3>Praktyka</h3>
+          <p class="muted">Programy dla firm i szkół, mentoring 1:1, szybkie formaty wellbeingowe.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THERAPY -->
+    <section id="therapy" class="section-muted">
+      <div class="container">
+        <h2>Terapie i obszary wsparcia</h2>
+        <p class="muted">Formaty wellbeingowe prowadzone przez dr inż. Sebastiana Kraszewskiego i dr inż. Marlenę Gąsior-Głogowską. Nie jest to psychoterapia kliniczna.</p>
+
+        <div class="grid cards-3" style="margin-top:12px">
+          <div class="card"><h3>Stres i wypalenie</h3><ul><li>Regulacja pobudzenia (HRV)</li><li>VR relaks i uważność</li><li>Higiena snu</li></ul></div>
+          <div class="card"><h3>Koncentracja i produktywność</h3><ul><li>EEG neurofeedback</li><li>Protokół fokus + oddech</li><li>Plan działania 14 dni</li></ul></div>
+          <div class="card"><h3>ADHD (dorośli)</h3><ul><li>Rytmy dnia i energia</li><li>Strategie pracy</li><li>Trening impulsów</li></ul></div>
+          <div class="card"><h3>Lęk i napięcie</h3><ul><li>Desensytyzacja VR</li><li>Audio-LED neuroflow</li><li>Techniki ugruntowania</li></ul></div>
+          <div class="card"><h3>Rodzice i nastolatki</h3><ul><li>Nawyki cyfrowe</li><li>Konflikty i komunikacja</li><li>Wsparcie szkoły</li></ul></div>
+          <div class="card"><h3>Zespoły i liderzy</h3><ul><li>Brief coaching 1:1</li><li>Higiena spotkań</li><li>Mindful leadership</li></ul></div>
+        </div>
+
+        <div class="card" style="margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+          <div>
+            <div class="muted" style="font-size:12px;text-transform:uppercase">Start</div>
+            <h3 style="margin:6px 0">Konsultacja 30-min (online)</h3>
+            <p class="muted">Poznamy Twój cel i dobierzemy metodę. Jeśli to nie dla Ciebie – nic nie płacisz.</p>
+          </div>
+          <a class="btn primary full-sm" href="#contact">Umów konsultację</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container grid cards-3">
+        <div class="card">
+          <div class="muted" style="font-size:12px">Dla firm</div>
+          <h3>Neurodiversity@Work Polska</h3>
+          <p class="muted">Audyty inkluzywności, warsztaty dla zespołów i menedżerów, roczne Centra Doskonałości (HR + rekrutacje).</p>
+          <ul><li>Audyt 8–12 tys. zł</li><li>Program 25–40 tys. zł</li><li>Centrum Doskonałości 100–150 tys. zł/rok</li></ul>
+          <div style="margin-top:12px"><a class="btn primary full-sm" href="#contact">Zapytaj o wycenę</a></div>
+        </div>
+        <div class="card">
+          <div class="muted" style="font-size:12px">Dla szkół</div>
+          <h3>Szkoła przyjazna neuroróżnorodności</h3>
+          <p class="muted">Szkolenia nauczycieli, warsztaty dla rodziców, materiały dydaktyczne i wsparcie wdrożeń.</p>
+          <ul><li>Szkolenia 3 tys. zł/grupa</li><li>Warsztaty 1 tys. zł/grupa</li><li>Materiały i konsultacje</li></ul>
+          <div style="margin-top:12px"><a class="btn ghost full-sm" href="#contact">Umów konsultację</a></div>
+        </div>
+        <div class="card">
+          <div class="muted" style="font-size:12px">Dla osób</div>
+          <h3>Trenuj swój mózg</h3>
+          <p class="muted">Szybkie, mierzalne formaty wellbeingowe prowadzone przez ekspertów.</p>
+          <ul><li>Neurofeedback BioBalance — 45 min — 200 zł</li><li>VR Relax & Focus Journey — 45–60 min — 150 zł</li><li>NeuroFlow (dźwięk & światło) — 60 min — 120 zł</li></ul>
+          <div style="margin-top:12px"><a class="btn primary full-sm" href="#contact">Rezerwuj teraz</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP -->
+    <section id="shop">
+      <div class="container">
+        <div style="display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap">
+          <h2>Sklep: kursy i warsztaty</h2>
+          <a class="muted" style="text-decoration:underline" href="#">Zobacz wszystkie</a>
+        </div>
+        <div class="grid cards-3" style="margin-top:12px">
+          <div class="card"><div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:#94a3b8">miniatura</div><h3 style="margin:10px 0 6px">Neuroróżnorodność w pracy — wprowadzenie</h3><div class="muted" style="font-size:14px">2.5 h • on-demand</div><div style="margin-top:6px;font-weight:700">299 zł</div><a class="btn primary full-sm" style="margin-top:10px" href="#">Dodaj do koszyka</a></div>
+          <div class="card"><div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:#94a3b8">miniatura</div><h3 style="margin:10px 0 6px">HR & Neurodiversity — toolkit (LIVE 2h)</h3><div class="muted" style="font-size:14px">terminy co 2 tyg.</div><div style="margin-top:6px;font-weight:700">149 zł</div><a class="btn primary full-sm" style="margin-top:10px" href="#">Dodaj do koszyka</a></div>
+          <div class="card"><div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:#94a3b8">miniatura</div><h3 style="margin:10px 0 6px">E-book: 10 zasad pracy z ADHD w zespole</h3><div class="muted" style="font-size:14px">PDF • 52 strony</div><div style="margin-top:6px;font-weight:700">69 zł</div><a class="btn primary full-sm" style="margin-top:10px" href="#">Dodaj do koszyka</a></div>
+        </div>
       </div>
     </section>
 
     <!-- TEAM -->
-    <section id="team" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#f8fafc">
+    <section id="team" class="section-muted">
       <div class="container grid cards-3">
         <div class="card">
           <div style="display:flex;align-items:center;gap:12px">
@@ -126,7 +260,7 @@
               <div class="muted" style="font-size:14px">Badania • Neurofeedback • AI</div>
             </div>
           </div>
-          <p class="muted" style="margin-top:10px;font-size:14px">Badacz i dydaktyk. 43+ publikacje, projekty wdrożeniowe, 700+ cytowań. Odpowiada za jakość metod i R&D.</p>
+          <p class="muted" style="margin-top:8px;font-size:14px">Badacz i dydaktyk. 43+ publikacje, projekty wdrożeniowe, 700+ cytowań. Odpowiada za jakość metod i R&D.</p>
         </div>
         <div class="card">
           <div style="display:flex;align-items:center;gap:12px">
@@ -136,7 +270,7 @@
               <div class="muted" style="font-size:14px">Edukacja • Etyka • Wdrożenia</div>
             </div>
           </div>
-          <p class="muted" style="margin-top:10px;font-size:14px">Praktyk i wykładowca. Projektuje programy szkoleń i wellbeing. Prowadzi warsztaty i sesje VR.</p>
+          <p class="muted" style="margin-top:8px;font-size:14px">Praktyk i wykładowca. Projektuje programy szkoleń i wellbeing. Prowadzi warsztaty i sesje VR.</p>
         </div>
         <div class="card">
           <div style="display:flex;align-items:center;gap:12px">
@@ -146,8 +280,42 @@
               <div class="muted" style="font-size:14px">Produkt • Partnerstwa • Komunikacja</div>
             </div>
           </div>
-          <p class="muted" style="margin-top:10px;font-size:14px">Strateg i integrator technologii. Odpowiada za ofertę, współprace i doświadczenie użytkownika.</p>
+          <p class="muted" style="margin-top:8px;font-size:14px">Strateg i integrator technologii. Odpowiada za ofertę, współprace i doświadczenie użytkownika.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <h2>FAQ i zasady</h2>
+        <details open><summary>Czy to psychoterapia kliniczna?</summary><p class="muted">Nie. To formaty rozwojowo-wellbeingowe (VR, neurofeedback, mentoring). W razie potrzeby polecimy sprawdzonych psychoterapeutów.</p></details>
+        <details><summary>Jak wyglądają płatności?</summary><p class="muted">Online (PayU/Przelewy24) lub na miejscu. Pakiety 5 sesji są tańsze o ~10%.</p></details>
+        <details><summary>Czy są zniżki?</summary><p class="muted">Tak – dla studentów, nauczycieli oraz NGO po weryfikacji.</p></details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section-muted">
+      <div class="container" style="display:grid;gap:16px">
+        <div>
+          <h2>Kontakt</h2>
+          <p class="muted">Masz pytania? Napisz do nas – wrócimy z propozycją terminu i opcjami współpracy.</p>
+          <p class="muted">E-mail: <a style="text-decoration:underline" href="mailto:kontakt@ncn.org.pl">kontakt@ncn.org.pl</a></p>
+          <p class="muted">Social: <a style="text-decoration:underline" href="#">LinkedIn</a> • <a style="text-decoration:underline" href="#">Facebook</a> • <a style="text-decoration:underline" href="#">Instagram</a></p>
+          <p class="muted" style="font-size:12px;margin-top:8px">RODO/Privacy • Regulamin • Polityka cookies (linki po wdrożeniu)</p>
+        </div>
+        <form class="card" onsubmit="event.preventDefault(); alert('Dziękujemy! Odezwiemy się mailowo.');">
+          <label>Imię i nazwisko<br/><input required placeholder="Twoje imię" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;margin-top:6px"/></label>
+          <br/>
+          <label>E-mail<br/><input required type="email" placeholder="twoj@mail.pl" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;margin-top:6px"/></label>
+          <br/>
+          <label>Temat<br/><input placeholder="Napisz, w czym pomóc" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;margin-top:6px"/></label>
+          <br/>
+          <label>Wiadomość<br/><textarea rows="4" placeholder="Krótki opis sprawy" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;margin-top:6px"></textarea></label>
+          <br/>
+          <button class="btn primary full-sm" type="submit">Wyślij</button>
+        </form>
       </div>
     </section>
   </main>
@@ -160,7 +328,12 @@
   </footer>
 
   <script>
+    // Rok w stopce
     document.getElementById('y').textContent = new Date().getFullYear();
+    // Mobile menu
+    const hamb = document.getElementById('hamb');
+    const menu = document.getElementById('menu');
+    hamb.addEventListener('click', ()=> menu.classList.toggle('open'));
   </script>
 </body>
 </html>
