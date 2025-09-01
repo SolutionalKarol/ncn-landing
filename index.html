@@ -6,22 +6,20 @@
   <title>NCN — Naukowe Centrum Neuroróżnorodności | VR • Neurofeedback • Kursy</title>
   <meta name="description" content="NCN łączy naukę i praktykę: sesje VR i neurofeedback, mentoring 1:1, kursy online oraz programy Neurodiversity@Work. Wrocław + online." />
 
-  <!-- Open Graph / WhatsApp preview (adresy pod GitHub Pages — og-cover.jpg możesz dodać później) -->
+  <!-- Open Graph / WhatsApp preview -->
   <meta property="og:site_name" content="NCN — Naukowe Centrum Neuroróżnorodności" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://solutionalkarol.github.io/ncn-landing/" />
   <meta property="og:title" content="Trenuj swój mózg — VR, neurofeedback i kursy online | NCN" />
   <meta property="og:description" content="Spokój, fokus i realne wsparcie. Sesje VR i neurofeedback, mentoring 1:1 oraz programy dla firm i szkół. Wrocław + online." />
   <meta property="og:image" content="https://solutionalkarol.github.io/ncn-landing/og-cover.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Trenuj swój mózg — VR, neurofeedback i kursy online | NCN" />
   <meta name="twitter:description" content="Sesje VR i neurofeedback, mentoring 1:1 oraz programy Neurodiversity@Work. Wrocław + online." />
   <meta name="twitter:image" content="https://solutionalkarol.github.io/ncn-landing/og-cover.jpg" />
 
-  <!-- Favicon (inline SVG — nic nie trzeba dosyłać) -->
+  <!-- Favicon (inline, działa od razu) -->
   <link rel="icon" href='data:image/svg+xml;utf8,
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
     <defs>
@@ -31,29 +29,27 @@
       </linearGradient>
     </defs>
     <circle cx="24" cy="24" r="22" fill="url(#g)" stroke="#0f172a" stroke-width="2"/>
-    <circle cx="15" cy="17" r="2.3" fill="#fff"/><circle cx="33" cy="17" r="2.3" fill="#fff"/><circle cx="24" cy="28" r="2.3" fill="#fff"/>
-    <path d="M15 17 L24 28 L33 17" stroke="#fff" stroke-width="1.8" fill="none"/>
+    <circle cx="17" cy="20" r="2.2" fill="#fff"/>
+    <circle cx="31" cy="20" r="2.2" fill="#fff"/>
+    <circle cx="24" cy="28" r="2.2" fill="#fff"/>
+    <path d="M17 20 L24 28 L31 20" stroke="#fff" stroke-width="1.8" fill="none"/>
     <path d="M12 22c0-7 6-10 12-10s12 3 12 10c0 5-4 9-12 9s-12-4-12-9z" stroke="#fff" stroke-width="1.4" fill="none" opacity=".6"/>
   </svg>' />
 
-  <!-- Jednoplikowy styl (bez bundlera) -->
   <style>
-    :root{--ink:#0f172a;--muted:#475569;--line:#e5e7eb;--bg:#f8fafc;--brand:#0f172a}
+    :root{--ink:#0f172a;--muted:#475569;--line:#e5e7eb;--brand:#0f172a}
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff}
     a{color:inherit}
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);z-index:50}
+    header{position:sticky;top:0;background:rgba(255,255,255,.9);border-bottom:1px solid var(--line);z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .nav a{font-size:14px;margin-left:16px;text-decoration:none}
     .btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none}
     .btn.primary{background:var(--brand);color:#fff}
-    .btn.ghost{border:1px solid var(--line)}
     .hero{position:relative;overflow:hidden}
-    .hero .bg{position:absolute;inset:0;opacity:.35;background:
-      radial-gradient(40rem 40rem at 120% -10%, #a7f3d0 0%, transparent 60%),
-      radial-gradient(40rem 40rem at -10% 10%, #93c5fd 0%, transparent 60%)}
+    .hero .bg{position:absolute;inset:0;opacity:.35;background:radial-gradient(40rem 40rem at 120% -10%, #a7f3d0 0%, transparent 60%), radial-gradient(40rem 40rem at -10% 10%, #93c5fd 0%, transparent 60%)}
     .hero .inner{padding:72px 0}
     h1{font-size:40px;line-height:1.1;margin:0 0 16px}
     p.lead{font-size:18px;color:var(--muted);max-width:700px}
@@ -62,42 +58,36 @@
     .cards-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     .card{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff;box-shadow:0 1px 2px rgba(16,24,40,.04)}
     .muted{color:var(--muted)}
-    .list{margin:12px 0 0 18px}.list li{margin:6px 0}
-    .badge{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font-size:12px;margin:4px 6px 0 0}
-    footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted)}
-    .stack{display:flex;flex-wrap:wrap;gap:8px}
-    .row{display:grid;gap:24px}
-    @media(min-width:960px){.row{grid-template-columns:1.1fr .9fr}}
-    details{border-bottom:1px solid var(--line);padding:12px 0}
-    summary{cursor:pointer;font-weight:600}
-    .avatar{width:56px;height:56px;border-radius:50%;
-      background:linear-gradient(135deg,#0f172a,#06b6d4);
-      display:flex;align-items:center;justify-content:center;
-      color:#fff;font-weight:800;font-size:18px;border:1px solid var(--line);
-      box-shadow:0 1px 2px rgba(16,24,40,.08);letter-spacing:.5px}
-    .section-muted{background:#f8fafc;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#0f172a,#06b6d4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;border:1px solid var(--line);box-shadow:0 1px 2px rgba(16,24,40,.08)}
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a href="#hero" style="font-weight:600;display:flex;align-items:center;gap:10px">
-        <!-- Inline logo NCN (mózg/neuron) -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="28" height="28" aria-hidden="true">
-          <defs>
-            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#06b6d4" />
-              <stop offset="100%" stop-color="#0f172a" />
-            </linearGradient>
-          </defs>
-          <circle cx="24" cy="24" r="22" fill="url(#g)" stroke="#0f172a" stroke-width="2" />
-          <circle cx="15" cy="17" r="2.3" fill="#ffffff"/>
-          <circle cx="33" cy="17" r="2.3" fill="#ffffff"/>
-          <circle cx="24" cy="28" r="2.3" fill="#ffffff"/>
-          <path d="M15 17 L24 28 L33 17" stroke="#ffffff" stroke-width="1.8" fill="none" />
-          <path d="M12 22c0-7 6-10 12-10s12 3 12 10c0 5-4 9-12 9s-12-4-12-9z" stroke="#ffffff" stroke-width="1.4" fill="none" opacity=".6"/>
-        </svg>
-        <span>NCN • Naukowe Centrum Neuroróżnorodności</span>
+      <a href="#hero" style="font-weight:600; text-decoration:none">
+        <div style="display:flex; align-items:center; gap:10px">
+          <!-- Ikona mózgu (SVG inline) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#06b6d4" />
+                <stop offset="100%" stop-color="#0f172a" />
+              </linearGradient>
+            </defs>
+            <circle cx="24" cy="24" r="22" fill="url(#g)" stroke="#0f172a" stroke-width="2" />
+            <circle cx="17" cy="20" r="2.2" fill="#ffffff"/>
+            <circle cx="31" cy="20" r="2.2" fill="#ffffff"/>
+            <circle cx="24" cy="28" r="2.2" fill="#ffffff"/>
+            <path d="M17 20 L24 28 L31 20" stroke="#ffffff" stroke-width="1.8" fill="none" />
+            <path d="M12 22c0-7 6-10 12-10s12 3 12 10c0 5-4 9-12 9s-12-4-12-9z" stroke="#ffffff" stroke-width="1.4" fill="none" opacity=".6"/>
+          </svg>
+
+          <!-- NCN + pełna nazwa -->
+          <div style="display:flex; flex-direction:column; line-height:1.05">
+            <span style="font-weight:800; letter-spacing:.4px; font-size:16px">NCN</span>
+            <span style="font-size:11px; color:#475569">Naukowe Centrum Neuroróżnorodności</span>
+          </div>
+        </div>
       </a>
       <nav class="hide-sm">
         <a href="#why">Dlaczego my</a>
@@ -112,7 +102,6 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section id="hero" class="hero">
       <div class="bg"></div>
       <div class="container inner">
@@ -126,144 +115,8 @@
       </div>
     </section>
 
-    <!-- TRUST -->
-    <section class="section-muted" style="padding:18px 0">
-      <div class="container">
-        <span class="badge">EEG/HRV-ready</span>
-        <span class="badge">VR mindfulness</span>
-        <span class="badge">Neurodiversity-affirming</span>
-        <span class="badge">On-site & online</span>
-        <span class="badge">PL/EN</span>
-      </div>
-    </section>
-
-    <!-- WHY -->
-    <section id="why">
-      <div class="container grid cards-3">
-        <div class="card">
-          <div class="muted" style="text-transform:uppercase;font-size:12px">Filary</div>
-          <h3>Nauka</h3>
-          <p class="muted">Zaplecze badawcze i dydaktyczne – wiarygodność, metodologia, mierzalne wyniki.</p>
-        </div>
-        <div class="card">
-          <div class="muted" style="text-transform:uppercase;font-size:12px">Filary</div>
-          <h3>Technologia</h3>
-          <p class="muted">Neurofeedback, VR, AI i biofeedback – realne narzędzia regulacji i rozwoju.</p>
-        </div>
-        <div class="card">
-          <div class="muted" style="text-transform:uppercase;font-size:12px">Filary</div>
-          <h3>Praktyka</h3>
-          <p class="muted">Programy dla firm i szkół, mentoring 1:1, szybkie formaty wellbeingowe.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- THERAPY -->
-    <section id="therapy" class="section-muted">
-      <div class="container">
-        <h2>Terapie i obszary wsparcia</h2>
-        <p class="muted">Formaty wellbeingowe prowadzone przez dr inż. Sebastiana Kraszewskiego i dr inż. Marlenę Gąsior-Głogowską. Nie jest to psychoterapia kliniczna.</p>
-
-        <div class="grid cards-3" style="margin-top:16px">
-          <div class="card"><h3>Stres i wypalenie</h3><ul class="list"><li>Regulacja pobudzenia (HRV)</li><li>VR relaks i uważność</li><li>Higiena snu</li></ul></div>
-          <div class="card"><h3>Koncentracja i produktywność</h3><ul class="list"><li>EEG neurofeedback</li><li>Protokół fokus + oddech</li><li>Plan działania 14 dni</li></ul></div>
-          <div class="card"><h3>ADHD (dorośli)</h3><ul class="list"><li>Rytmy dnia i energia</li><li>Strategie pracy</li><li>Trening impulsów</li></ul></div>
-          <div class="card"><h3>Lęk i napięcie</h3><ul class="list"><li>Desensytyzacja VR</li><li>Audio-LED neuroflow</li><li>Techniki ugruntowania</li></ul></div>
-          <div class="card"><h3>Rodzice i nastolatki</h3><ul class="list"><li>Nawyki cyfrowe</li><li>Konflikty i komunikacja</li><li>Wsparcie szkoły</li></ul></div>
-          <div class="card"><h3>Zespoły i liderzy</h3><ul class="list"><li>Brief coaching 1:1</li><li>Higiena spotkań</li><li>Mindful leadership</li></ul></div>
-        </div>
-
-        <div class="grid cards-3" style="margin-top:16px">
-          <div class="card">
-            <h3>Cennik i płatności</h3>
-            <ul class="list"><li>VR 150 zł / 45–60 min</li><li>Neurofeedback 200 zł / 45 min</li><li>Pakiet 5 sesji: 1000 zł</li></ul>
-            <p class="muted" style="font-size:12px">Płatności online • Faktury • Zniżki dla studentów</p>
-          </div>
-          <div class="card">
-            <h3>Lokalizacja i online</h3>
-            <ul class="list"><li>Wrocław • centrum</li><li>Sesje zdalne (elementy VR prowadzone)</li><li>Pn–Pt 9:00–19:00</li></ul>
-            <p class="muted" style="font-size:12px">Po rezerwacji otrzymasz SMS/mail z detalami</p>
-          </div>
-          <div class="card">
-            <h3>Dla kogo?</h3>
-            <ul class="list"><li>Dorośli, młodzież 14+</li><li>HR i liderzy</li><li>Nauczyciele i rodzice</li></ul>
-            <p class="muted" style="font-size:12px">Potrzebujesz psychoterapii klinicznej? Polecimy kontakty.</p>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
-          <div>
-            <div class="muted" style="font-size:12px;text-transform:uppercase">Start</div>
-            <h3 style="margin:6px 0">Konsultacja 30-min (online)</h3>
-            <p class="muted">Poznamy Twój cel i dobierzemy metodę. Jeśli to nie dla Ciebie – nic nie płacisz.</p>
-          </div>
-          <a class="btn primary" href="#contact">Umów konsultację</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services">
-      <div class="container grid cards-3">
-        <div class="card">
-          <div class="muted" style="font-size:12px">Dla firm</div>
-          <h3>Neurodiversity@Work Polska</h3>
-          <p class="muted">Audyty inkluzywności, warsztaty dla zespołów i menedżerów, roczne Centra Doskonałości (HR + rekrutacje).</p>
-          <ul class="list"><li>Audyt 8–12 tys. zł</li><li>Program 25–40 tys. zł</li><li>Centrum Doskonałości 100–150 tys. zł/rok</li></ul>
-          <div style="margin-top:12px"><a class="btn primary" href="#contact">Zapytaj o wycenę</a></div>
-        </div>
-        <div class="card">
-          <div class="muted" style="font-size:12px">Dla szkół</div>
-          <h3>Szkoła przyjazna neuroróżnorodności</h3>
-          <p class="muted">Szkolenia nauczycieli, warsztaty dla rodziców, materiały dydaktyczne i wsparcie wdrożeń.</p>
-          <ul class="list"><li>Szkolenia 3 tys. zł/grupa</li><li>Warsztaty 1 tys. zł/grupa</li><li>Materiały i konsultacje</li></ul>
-          <div style="margin-top:12px"><a class="btn ghost" href="#contact">Umów konsultację</a></div>
-        </div>
-        <div class="card">
-          <div class="muted" style="font-size:12px">Dla osób</div>
-          <h3>Trenuj swój mózg</h3>
-          <p class="muted">Szybkie, mierzalne formaty wellbeingowe prowadzone przez ekspertów.</p>
-          <ul class="list"><li>Neurofeedback BioBalance — 45 min — 200 zł</li><li>VR Relax & Focus Journey — 45–60 min — 150 zł</li><li>NeuroFlow (dźwięk & światło) — 60 min — 120 zł</li></ul>
-          <div style="margin-top:12px"><a class="btn primary" href="#contact">Rezerwuj teraz</a></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SHOP -->
-    <section id="shop">
-      <div class="container">
-        <div style="display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap">
-          <h2>Sklep: kursy i warsztaty</h2>
-          <a class="muted" style="text-decoration:underline" href="#">Zobacz wszystkie</a>
-        </div>
-        <div class="grid cards-3" style="margin-top:16px">
-          <div class="card">
-            <div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:#94a3b8">miniatura</div>
-            <h3 style="margin:12px 0 6px">Neuroróżnorodność w pracy — wprowadzenie</h3>
-            <div class="muted" style="font-size:14px">2.5 h • on-demand</div>
-            <div style="margin-top:6px;font-weight:700">299 zł</div>
-            <a class="btn primary" style="margin-top:12px" href="#">Dodaj do koszyka</a>
-          </div>
-          <div class="card">
-            <div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:#94a3b8">miniatura</div>
-            <h3 style="margin:12px 0 6px">HR & Neurodiversity — toolkit (LIVE 2h)</h3>
-            <div class="muted" style="font-size:14px">terminy co 2 tyg.</div>
-            <div style="margin-top:6px;font-weight:700">149 zł</div>
-            <a class="btn primary" style="margin-top:12px" href="#">Dodaj do koszyka</a>
-          </div>
-          <div class="card">
-            <div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:#94a3b8">miniatura</div>
-            <h3 style="margin:12px 0 6px">E-book: 10 zasad pracy z ADHD w zespole</h3>
-            <div class="muted" style="font-size:14px">PDF • 52 strony</div>
-            <div style="margin-top:6px;font-weight:700">69 zł</div>
-            <a class="btn primary" style="margin-top:12px" href="#">Dodaj do koszyka</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- TEAM -->
-    <section id="team" class="section-muted">
+    <section id="team" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#f8fafc">
       <div class="container grid cards-3">
         <div class="card">
           <div style="display:flex;align-items:center;gap:12px">
@@ -297,79 +150,6 @@
         </div>
       </div>
     </section>
-
-    <!-- BLOG -->
-    <section id="blog">
-      <div class="container">
-        <div style="display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap">
-          <h2>Z bloga</h2>
-          <a class="muted" style="text-decoration:underline" href="#">Wszystkie wpisy</a>
-        </div>
-        <div class="grid cards-3" style="margin-top:16px">
-          <div class="card">
-            <div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:#94a3b8">miniatura</div>
-            <div class="muted" style="font-size:12px;margin-top:8px">2025-09-01</div>
-            <h3>Neuroróżnorodność w pracy: od czego zacząć?</h3>
-            <p class="muted" style="font-size:14px">Pierwsze kroki dla menedżerów i zespołów: diagnoza, komunikacja i szybkie wygrane.</p>
-          </div>
-          <div class="card">
-            <div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:#94a3b8">miniatura</div>
-            <div class="muted" style="font-size:12px;margin-top:8px">2025-08-25</div>
-            <h3>VR w redukcji stresu — co mówi nauka</h3>
-            <p class="muted" style="font-size:14px">Przegląd badań nad skutecznością immersyjnych interwencji VR w obniżaniu pobudzenia.</p>
-          </div>
-          <div class="card">
-            <div style="aspect-ratio:16/9;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:#94a3b8">miniatura</div>
-            <div class="muted" style="font-size:12px;margin-top:8px">2025-08-20</div>
-            <h3>Neurofeedback: jak wygląda pierwsza sesja</h3>
-            <p class="muted" style="font-size:14px">Krok po kroku: konfiguracja, protokół, wskaźniki i to, co poczujesz po wyjściu.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section-muted">
-      <div class="container">
-        <h2>FAQ i zasady</h2>
-        <details open>
-          <summary>Czy to psychoterapia kliniczna?</summary>
-          <p class="muted">Nie. To formaty rozwojowo-wellbeingowe (VR, neurofeedback, mentoring). W razie potrzeby polecimy sprawdzonych psychoterapeutów.</p>
-        </details>
-        <details>
-          <summary>Jak wyglądają płatności?</summary>
-          <p class="muted">Online (PayU/Przelewy24) lub na miejscu. Pakiety 5 sesji są tańsze o ~10%.</p>
-        </details>
-        <details>
-          <summary>Czy są zniżki?</summary>
-          <p class="muted">Tak – dla studentów, nauczycieli oraz NGO po weryfikacji.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container row">
-        <div>
-          <h2>Kontakt</h2>
-          <p class="muted">Masz pytania? Napisz do nas – wrócimy z propozycją terminu i opcjami współpracy.</p>
-          <p class="muted">E-mail: <a style="text-decoration:underline" href="mailto:kontakt@ncn.org.pl">kontakt@ncn.org.pl</a></p>
-          <p class="muted">Social: <a style="text-decoration:underline" href="#">LinkedIn</a> • <a style="text-decoration:underline" href="#">Facebook</a> • <a style="text-decoration:underline" href="#">Instagram</a></p>
-          <p class="muted" style="font-size:12px;margin-top:16px">RODO/Privacy • Regulamin • Polityka cookies (linki po wdrożeniu)</p>
-        </div>
-        <form class="card" onsubmit="event.preventDefault(); alert('Dziękujemy! Odezwiemy się mailowo.');">
-          <label>Imię i nazwisko<br/><input required placeholder="Twoje imię" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:12px;margin-top:6px"/></label>
-          <br/>
-          <label>E-mail<br/><input required type="email" placeholder="twoj@mail.pl" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:12px;margin-top:6px"/></label>
-          <br/>
-          <label>Temat<br/><input placeholder="Napisz, w czym pomóc" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:12px;margin-top:6px"/></label>
-          <br/>
-          <label>Wiadomość<br/><textarea rows="4" placeholder="Krótki opis sprawy" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:12px;margin-top:6px"></textarea></label>
-          <br/>
-          <button class="btn primary" type="submit">Wyślij</button>
-        </form>
-      </div>
-    </section>
   </main>
 
   <footer>
@@ -379,6 +159,8 @@
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
