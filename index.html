@@ -17,14 +17,19 @@
 html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
 a{color:var(--ink);text-decoration:none}
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* NAV */
 header{position:sticky;top:0;z-index:10;background:rgba(8,12,18,.65);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{height:66px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-weight:800;letter-spacing:.2px}
 nav a{margin-left:16px;opacity:.9}
+
+/* UI */
 .btn{display:inline-block;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#001018;padding:12px 18px;border-radius:12px;font-weight:800;box-shadow:0 8px 28px rgba(59,198,255,.25);transition:.2s}
 .btn:hover{transform:translateY(-1px)}
 .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
 .badge{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-size:12px;color:#cfe3f2}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
 
 .section{padding:84px 0}
 h1{font-size:48px;line-height:1.1;margin:.2em 0}
@@ -32,7 +37,7 @@ h2{font-size:32px;margin:0 0 10px}
 h3{font-size:22px;margin:0 0 6px}
 .lead{color:var(--muted);max-width:65ch}
 
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+/* LAYOUTS */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
@@ -40,7 +45,9 @@ h3{font-size:22px;margin:0 0 6px}
 ul.clean{margin:10px 0 0 0;padding-left:18px}
 ul.clean li{margin:.35em 0}
 .ok{color:var(--ok)} .warn{color:var(--warn)}
+section[id]{scroll-margin-top:80px}
 
+/* HERO (bez zdjęcia) */
 .hero{padding:96px 0 60px;background:
   radial-gradient(800px 350px at 18% -10%, rgba(59,198,255,.18), transparent),
   radial-gradient(700px 320px at 80% 10%, rgba(23,167,229,.18), transparent)}
@@ -49,6 +56,7 @@ ul.clean li{margin:.35em 0}
 .hero .stat{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
 .hero .stat b{font-size:22px}
 
+/* TEAM */
 .team{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:12px}
 .member{display:flex;flex-direction:column;gap:10px}
 .avatar{width:120px;height:120px;border-radius:50%;border:1px solid var(--line);background:#10202d;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.25);overflow:hidden;margin-bottom:4px}
@@ -56,14 +64,17 @@ ul.clean li{margin:.35em 0}
 .role{font-size:13px;color:#cfe3f2;opacity:.9}
 .bio{font-size:14px;color:#b9c8d6}
 
+/* FAQ */
 .faq details{margin:8px 0}
 .faq summary{cursor:pointer;font-weight:600}
 
+/* FOOTER */
 footer{padding:28px 0;border-top:1px solid var(--line);color:#c9d6e2}
 .footer-wrap{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
 .legal-mini{font-size:12px;color:#9fb0bf;opacity:.85;margin-top:6px}
 .footer-nav a{margin-left:12px;opacity:.85}
 
+/* RWD */
 @media (max-width:1100px){ .team{grid-template-columns:repeat(2,1fr)} }
 @media (max-width:900px){
   .hero-top{grid-template-columns:1fr}
@@ -93,12 +104,12 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:#c9d6e2}
   <div class="container hero-top">
     <div>
       <h1>VR/AI dla edukacji i psychologii — <br>merytoryka, wdrożenia, efekty</h1>
-      <p class="lead">Programy dla nauczycieli, psychologów i instytucji: certyfikowane szkolenia VR/AI, mentoring na case’ach oraz usługi psychologiczne realizowane przez licencjonowanego psychologa. Edukacja ≠ terapia — klarowny podział ról i zgodność z RODO.</p>
+      <p class="lead">Programy dla nauczycieli, psychologów i instytucji: certyfikowane szkolenia VR/AI, mentoring na realnych case’ach oraz usługi psychologiczne realizowane przez licencjonowanego psychologa. Edukacja ≠ terapia — klarowny podział ról i zgodność z RODO.</p>
       <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
         <a class="btn" href="#oferta">Zobacz ofertę</a>
         <a class="btn btn-ghost" href="#kontakt">Umów rozmowę</a>
       </div>
-      <div class="hero badges" style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
         <span class="badge">VR/AI</span><span class="badge">arkusz 3-3-1</span><span class="badge">RODO-safe</span>
       </div>
     </div>
@@ -110,7 +121,7 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:#c9d6e2}
         <li>plan obserwacji 3-3-1 (10 min/tydz.)</li>
       </ul>
       <p class="lead" style="font-size:12px;margin-top:6px">Część edukacyjna/mentoring nie stanowi świadczeń zdrowotnych. Usługi psychologiczne wykonuje wyłącznie uprawniony psycholog.</p>
-      <div class="stats">
+      <div class="hero stats">
         <div class="stat"><b>120h</b><div>Certyfikat NMA</div></div>
         <div class="stat"><b>8–12</b><div>osób / grupa</div></div>
         <div class="stat"><b>3–6 m-cy</b><div>wdrożenia instytucyjne</div></div>
@@ -186,23 +197,17 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:#c9d6e2}
     <h2>Zespół</h2>
     <div class="team">
 
-      <!-- Marlena — "smerfetka" szatynka -->
+      <!-- Marlena — smerfetka szatynka -->
       <div class="card member">
-        <div class="avatar" title="Marlena — 'smerfetka' szatynka">
-          <!-- prosta autorska ikonka: niebieska buzia + brązowe włosy + czapka -->
+        <div class="avatar" title="Marlena — smerfetka szatynka">
           <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1">
-                <stop offset="0" stop-color="#3bc6ff"/><stop offset="1" stop-color="#17a7e5"/>
-              </linearGradient>
-            </defs>
-            <rect width="120" height="120" rx="60" fill="url(#g1)"/>
-            <path d="M20 70 q40 -40 80 0 v20 h-80z" fill="#4a2f23"/> <!-- włosy szatyn -->
-            <circle cx="60" cy="62" r="26" fill="#9be8ff"/>
+            <rect width="120" height="120" rx="60" fill="#3bc6ff"/>
+            <path d="M20 80 q40 -50 80 0 v25 h-80z" fill="#5a3825"/>
+            <circle cx="60" cy="62" r="26" fill="#aeefff"/>
             <circle cx="50" cy="60" r="4" fill="#083a52"/>
             <circle cx="70" cy="60" r="4" fill="#083a52"/>
             <path d="M48 72 q12 8 24 0" stroke="#083a52" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path d="M30 38 q30 -22 60 0 q-22 -3 -30 -3 q-8 0 -30 3z" fill="#ffffff"/> <!-- czapka -->
+            <path d="M28 36 q32 -26 64 0 q-18 -6 -32 -6 q-14 0 -32 6z" fill="#fff"/>
           </svg>
         </div>
         <h4>dr inż. Marlena Gąsior-Głogowska</h4>
@@ -210,16 +215,17 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:#c9d6e2}
         <p class="bio">Badania amyloidów, spektroskopia Ramana, biofunkcjonalizacja biomateriałów. Projektuje scenariusze VR i metryki wdrożeń; prowadzi edukację i mentoring.</p>
       </div>
 
-      <!-- Sebastian — "smerf maruda" -->
+      <!-- Sebastian — uśmiechnięty, ręce założone -->
       <div class="card member">
-        <div class="avatar" title="Sebastian — 'smerf maruda'">
+        <div class="avatar" title="Sebastian — smerf maruda (uśmiech + ręce)">
           <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
-            <rect width="120" height="120" rx="60" fill="#27b1ee"/>
-            <circle cx="60" cy="62" r="28" fill="#a7e6ff"/>
+            <rect width="120" height="120" rx="60" fill="#29b9f6"/>
+            <circle cx="60" cy="62" r="28" fill="#b7f2ff"/>
             <circle cx="50" cy="58" r="4.5" fill="#062f44"/>
             <circle cx="70" cy="58" r="4.5" fill="#062f44"/>
-            <path d="M46 76 q14 -10 28 0" stroke="#062f44" stroke-width="3.5" fill="none" stroke-linecap="round"/> <!-- odwrócony uśmiech -->
-            <path d="M28 40 q30 -24 64 0" fill="#fff"/>
+            <path d="M46 74 q14 6 28 0" stroke="#062f44" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M42 82 q18 -6 36 0" stroke="#062f44" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M28 36 q32 -26 64 0" fill="#fff"/>
           </svg>
         </div>
         <h4>dr inż. Sebastian Kraszewski</h4>
@@ -227,17 +233,17 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:#c9d6e2}
         <p class="bio">Autor 40+ publikacji, doświadczenie grantowe. Warstwa AI/neurofeedback, ewaluacja i jakość naukowa programów NMA.</p>
       </div>
 
-      <!-- Psycholog — "smerfetka" blond -->
+      <!-- Psycholog — smerfetka blond -->
       <div class="card member">
-        <div class="avatar" title="Psycholog — 'smerfetka' blond">
+        <div class="avatar" title="Psycholog — smerfetka blond">
           <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
-            <rect width="120" height="120" rx="60" fill="#29b9f6"/>
-            <path d="M18 72 q42 -42 84 0 v18 h-84z" fill="#f3d27a"/> <!-- włosy blond -->
-            <circle cx="60" cy="62" r="26" fill="#b1efff"/>
+            <rect width="120" height="120" rx="60" fill="#21a8ea"/>
+            <path d="M18 72 q42 -42 84 0 v20 h-84z" fill="#f7d774"/>
+            <circle cx="60" cy="62" r="26" fill="#b7f2ff"/>
             <circle cx="50" cy="60" r="4" fill="#083a52"/>
             <circle cx="70" cy="60" r="4" fill="#083a52"/>
-            <path d="M48 72 q12 7 24 0" stroke="#083a52" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path d="M28 40 q30 -24 64 0" fill="#fff"/>
+            <path d="M48 72 q12 8 24 0" stroke="#083a52" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M28 36 q32 -26 64 0" fill="#fff"/>
           </svg>
         </div>
         <h4>Psycholog współpracujący</h4>
@@ -245,23 +251,22 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:#c9d6e2}
         <p class="bio">Prowadzi kwalifikację, dokumentację i sesje psychologiczne; dba o zgodność z przepisami i etyką zawodu, we współpracy z kadrą NMA.</p>
       </div>
 
-      <!-- Karol — "smerf ważniak" (okulary) -->
+      <!-- Karol — smerf ważniak (okulary) -->
       <div class="card member">
-        <div class="avatar" title="Karol — 'smerf ważniak'">
+        <div class="avatar" title="Karol — smerf ważniak">
           <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
-            <rect width="120" height="120" rx="60" fill="#21a8ea"/>
-            <circle cx="60" cy="62" r="28" fill="#a7e6ff"/>
-            <!-- okulary -->
-            <circle cx="48" cy="60" r="7" fill="none" stroke="#072a3a" stroke-width="3"/>
-            <circle cx="72" cy="60" r="7" fill="none" stroke="#072a3a" stroke-width="3"/>
-            <line x1="55" y1="60" x2="65" y2="60" stroke="#072a3a" stroke-width="3"/>
-            <path d="M46 72 q14 8 28 0" stroke="#072a3a" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path d="M26 40 q32 -26 68 0" fill="#fff"/>
+            <rect width="120" height="120" rx="60" fill="#17a7e5"/>
+            <circle cx="60" cy="62" r="28" fill="#b7f2ff"/>
+            <circle cx="48" cy="60" r="6" fill="none" stroke="#072a3a" stroke-width="3"/>
+            <circle cx="72" cy="60" r="6" fill="none" stroke="#072a3a" stroke-width="3"/>
+            <line x1="54" y1="60" x2="66" y2="60" stroke="#072a3a" stroke-width="3"/>
+            <path d="M46 74 q14 6 28 0" stroke="#072a3a" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M28 36 q32 -26 64 0" fill="#fff"/>
           </svg>
         </div>
         <h4>Karol Kiszło</h4>
-        <div class="role">strategia • produkt • design</div>
-        <p class="bio">Rozwój biznesowy i produktowy NMA. Strategia VR/AI w edukacji i psychologii; koordynacja zespołu i komunikacji projektu.</p>
+        <div class="role">Strategia • PR • Marketing • Rozwój biznesowy</div>
+        <p class="bio">Odpowiada za rozwój i wizerunek NeuroMentor Academy. Łączy komunikację, marketing i reklamę z długofalową strategią biznesową, dbając o spójność projektu i jego obecność w przestrzeni publicznej.</p>
       </div>
 
     </div>
