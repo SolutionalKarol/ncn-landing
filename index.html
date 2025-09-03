@@ -1,322 +1,166 @@
 <!doctype html>
 <html lang="pl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NeuroMentor Academy — VR/AI edukacja, mentoring i psychologia</title>
-<meta name="description" content="Profesjonalne programy edukacyjne VR/AI, mentoring dla praktyków i usługi psychologiczne we współpracy z licencjonowanym psychologiem.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#0b0f14; --bg2:#0a0e13; --ink:#e6edf3; --muted:#9cb2c4;
-  --brand:#3bc6ff; --brand2:#17a7e5; --card:#0f1721; --line:rgba(255,255,255,.08);
-  --ok:#10b981; --warn:#f59e0b;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
-a{color:var(--ink);text-decoration:none}
-.container{max-width:1200px;margin:0 auto;padding:0 20px}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NCN — Naukowe Centrum Neuroróżnorodności | VR • Neurofeedback • Kursy</title>
+  <meta name="description" content="NCN łączy naukę i praktykę: sesje VR i neurofeedback, mentoring 1:1, kursy online oraz programy Neurodiversity@Work. Wrocław + online." />
 
-/* NAV */
-header{position:sticky;top:0;z-index:10;background:rgba(8,12,18,.65);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{height:66px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:800;letter-spacing:.2px}
-nav a{margin-left:16px;opacity:.9}
+  <!-- Open Graph / WhatsApp preview -->
+  <meta property="og:site_name" content="NCN — Naukowe Centrum Neuroróżnorodności" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://solutionalkarol.github.io/ncn-landing/" />
+  <meta property="og:title" content="Trenuj swój mózg — VR, neurofeedback i kursy online | NCN" />
+  <meta property="og:description" content="Spokój, fokus i realne wsparcie. Sesje VR i neurofeedback, mentoring 1:1 oraz programy dla firm i szkół. Wrocław + online." />
+  <meta property="og:image" content="https://solutionalkarol.github.io/ncn-landing/og-cover.jpg" />
 
-/* UI */
-.btn{display:inline-block;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#001018;padding:12px 18px;border-radius:12px;font-weight:800;box-shadow:0 8px 28px rgba(59,198,255,.25);transition:.2s}
-.btn:hover{transform:translateY(-1px)}
-.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
-.badge{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-size:12px;color:#cfe3f2}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Trenuj swój mózg — VR, neurofeedback i kursy online | NCN" />
+  <meta name="twitter:description" content="Sesje VR i neurofeedback, mentoring 1:1 oraz programy Neurodiversity@Work. Wrocław + online." />
+  <meta name="twitter:image" content="https://solutionalkarol.github.io/ncn-landing/og-cover.jpg" />
 
-.section{padding:84px 0}
-h1{font-size:48px;line-height:1.1;margin:.2em 0}
-h2{font-size:32px;margin:0 0 10px}
-h3{font-size:22px;margin:0 0 6px}
-.lead{color:var(--muted);max-width:65ch}
+  <!-- Favicon (inline, działa od razu) -->
+  <link rel="icon" href='data:image/svg+xml;utf8,
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+    <defs>
+      <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#06b6d4"/>
+        <stop offset="100%" stop-color="#0f172a"/>
+      </linearGradient>
+    </defs>
+    <circle cx="24" cy="24" r="22" fill="url(#g)" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="17" cy="20" r="2.2" fill="#fff"/>
+    <circle cx="31" cy="20" r="2.2" fill="#fff"/>
+    <circle cx="24" cy="28" r="2.2" fill="#fff"/>
+    <path d="M17 20 L24 28 L31 20" stroke="#fff" stroke-width="1.8" fill="none"/>
+    <path d="M12 22c0-7 6-10 12-10s12 3 12 10c0 5-4 9-12 9s-12-4-12-9z" stroke="#fff" stroke-width="1.4" fill="none" opacity=".6"/>
+  </svg>' />
 
-/* LAYOUTS */
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
-.step{border-left:3px solid var(--brand2);padding:12px 12px 12px 14px;border-radius:12px;background:rgba(255,255,255,.03)}
-ul.clean{margin:10px 0 0 0;padding-left:18px}
-ul.clean li{margin:.35em 0}
-.ok{color:var(--ok)} .warn{color:var(--warn)}
-section[id]{scroll-margin-top:80px}
-
-/* HERO (bez zdjęcia) */
-.hero{padding:96px 0 60px;background:
-  radial-gradient(800px 350px at 18% -10%, rgba(59,198,255,.18), transparent),
-  radial-gradient(700px 320px at 80% 10%, rgba(23,167,229,.18), transparent)}
-.hero-top{display:grid;grid-template-columns:1.4fr .6fr;gap:22px;align-items:start}
-.hero .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
-.hero .stat{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
-.hero .stat b{font-size:22px}
-
-/* TEAM */
-.team{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:12px}
-.member{display:flex;flex-direction:column;gap:10px}
-.avatar{width:120px;height:120px;border-radius:50%;border:1px solid var(--line);background:#10202d;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.25);overflow:hidden;margin-bottom:4px}
-.member h4{margin:0;font-size:18px}
-.role{font-size:13px;color:#cfe3f2;opacity:.9}
-.bio{font-size:14px;color:#b9c8d6}
-
-/* FAQ */
-.faq details{margin:8px 0}
-.faq summary{cursor:pointer;font-weight:600}
-
-/* FOOTER */
-footer{padding:28px 0;border-top:1px solid var(--line);color:#c9d6e2}
-.footer-wrap{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
-.legal-mini{font-size:12px;color:#9fb0bf;opacity:.85;margin-top:6px}
-.footer-nav a{margin-left:12px;opacity:.85}
-
-/* RWD */
-@media (max-width:1100px){ .team{grid-template-columns:repeat(2,1fr)} }
-@media (max-width:900px){
-  .hero-top{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr}
-  .grid-2{grid-template-columns:1fr}
-  .timeline{grid-template-columns:1fr 1fr}
-}
-@media (max-width:600px){ .timeline{grid-template-columns:1fr} }
-</style>
+  <style>
+    :root{--ink:#0f172a;--muted:#475569;--line:#e5e7eb;--brand:#0f172a}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff}
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;background:rgba(255,255,255,.9);border-bottom:1px solid var(--line);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav a{font-size:14px;margin-left:16px;text-decoration:none}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none}
+    .btn.primary{background:var(--brand);color:#fff}
+    .hero{position:relative;overflow:hidden}
+    .hero .bg{position:absolute;inset:0;opacity:.35;background:radial-gradient(40rem 40rem at 120% -10%, #a7f3d0 0%, transparent 60%), radial-gradient(40rem 40rem at -10% 10%, #93c5fd 0%, transparent 60%)}
+    .hero .inner{padding:72px 0}
+    h1{font-size:40px;line-height:1.1;margin:0 0 16px}
+    p.lead{font-size:18px;color:var(--muted);max-width:700px}
+    section{padding:56px 0}
+    .grid{display:grid;gap:20px}
+    .cards-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+    .muted{color:var(--muted)}
+    .avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#0f172a,#06b6d4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;border:1px solid var(--line);box-shadow:0 1px 2px rgba(16,24,40,.08)}
+  </style>
 </head>
 <body>
-
-<header>
-  <div class="container nav">
-    <div class="logo">NeuroMentor Academy</div>
-    <nav>
-      <a href="#oferta">Oferta</a>
-      <a href="#jak-dziala">Jak to działa</a>
-      <a href="#zespol">Zespół</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn-ghost" href="#kontakt">Kontakt</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container hero-top">
-    <div>
-      <h1>VR/AI dla edukacji i psychologii — <br>merytoryka, wdrożenia, efekty</h1>
-      <p class="lead">Programy dla nauczycieli, psychologów i instytucji: certyfikowane szkolenia VR/AI, mentoring na realnych case’ach oraz usługi psychologiczne realizowane przez licencjonowanego psychologa. Edukacja ≠ terapia — klarowny podział ról i zgodność z RODO.</p>
-      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
-        <a class="btn" href="#oferta">Zobacz ofertę</a>
-        <a class="btn btn-ghost" href="#kontakt">Umów rozmowę</a>
-      </div>
-      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-        <span class="badge">VR/AI</span><span class="badge">arkusz 3-3-1</span><span class="badge">RODO-safe</span>
-      </div>
-    </div>
-    <aside class="card">
-      <h3>Co zyskasz w 30 dni</h3>
-      <ul class="clean">
-        <li>5–7 adaptacji wdrożonych w klasie/gabinecie</li>
-        <li>gotowe skrypty dla rodzica/nauczyciela</li>
-        <li>plan obserwacji 3-3-1 (10 min/tydz.)</li>
-      </ul>
-      <p class="lead" style="font-size:12px;margin-top:6px">Część edukacyjna/mentoring nie stanowi świadczeń zdrowotnych. Usługi psychologiczne wykonuje wyłącznie uprawniony psycholog.</p>
-      <div class="hero stats">
-        <div class="stat"><b>120h</b><div>Certyfikat NMA</div></div>
-        <div class="stat"><b>8–12</b><div>osób / grupa</div></div>
-        <div class="stat"><b>3–6 m-cy</b><div>wdrożenia instytucyjne</div></div>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<section id="oferta" class="section">
-  <div class="container">
-    <h2>Oferta</h2>
-    <div class="grid-3">
-      <article class="card">
-        <h3>Certyfikat NMA (120h)</h3>
-        <p>8 modułów, 6 superwizji, 2 case’y. Symulacje VR, narzędzia AI i mierzalne wdrożenia w praktyce.</p>
-        <ul class="clean">
-          <li><span class="ok">•</span> kursy on-demand + live</li>
-          <li><span class="ok">•</span> arkusz 3-3-1 i checklisty</li>
-          <li><span class="ok">•</span> portfolio wdrożeń</li>
-        </ul>
-        <p style="margin-top:10px"><a class="btn" href="#kontakt">Zgłoś się</a></p>
-      </article>
-      <article class="card">
-        <h3>Mentoring / Coaching</h3>
-        <p>1:1 lub małe grupy (8–12). Praca na realnych case’ach, plan wdrożeń tydzień-po-tygodniu.</p>
-        <ul class="clean">
-          <li><span class="ok">•</span> pakiety 5×50 min (1:1)</li>
-          <li><span class="ok">•</span> 6 spotkań / 8 tygodni (grupa)</li>
-          <li><span class="ok">•</span> gotowe skrypty komunikacji</li>
-        </ul>
-        <p style="margin-top:10px"><a class="btn btn-ghost" href="#kontakt">Zapytaj o termin</a></p>
-      </article>
-      <article class="card">
-        <h3>Usługi psychologiczne (VR-assisted)</h3>
-        <p>Diagnoza/interwencje prowadzone przez licencjonowanego psychologa; VR jako narzędzie wspierające.</p>
-        <ul class="clean">
-          <li><span class="ok">•</span> kwalifikacja, wywiad, plan</li>
-          <li><span class="ok">•</span> sesje online/VR</li>
-          <li><span class="ok">•</span> dokumentacja i raport</li>
-        </ul>
-        <p class="lead" style="font-size:12px;margin-top:6px">Brak świadczeń lekarskich. Edukacja i mentoring to osobna ścieżka.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="jak-dziala" class="section">
-  <div class="container">
-    <h2>Jak to działa</h2>
-    <div class="timeline">
-      <div class="step">
-        <h3>1. Kwalifikacja</h3>
-        <p class="lead">15–20 min rozmowa: cele, zakres (edukacja / psychologia), zgody RODO.</p>
-      </div>
-      <div class="step">
-        <h3>2. Ścieżka</h3>
-        <p class="lead">Program NMA (edukacja/VR/AI) lub ścieżka psychologiczna — zależnie od potrzeb.</p>
-      </div>
-      <div class="step">
-        <h3>3. Wdrożenia i metryki</h3>
-        <p class="lead">Arkusz 3-3-1, checklisty adaptacji, dane z sesji VR (progres).</p>
-      </div>
-      <div class="step">
-        <h3>4. Raport</h3>
-        <p class="lead">Podsumowanie działań + rekomendacje dla osoby/instytucji.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="zespol" class="section">
-  <div class="container">
-    <h2>Zespół</h2>
-    <div class="team">
-
-      <!-- Marlena — smerfetka szatynka -->
-      <div class="card member">
-        <div class="avatar" title="Marlena — smerfetka szatynka">
-          <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
-            <rect width="120" height="120" rx="60" fill="#3bc6ff"/>
-            <path d="M20 80 q40 -50 80 0 v25 h-80z" fill="#5a3825"/>
-            <circle cx="60" cy="62" r="26" fill="#aeefff"/>
-            <circle cx="50" cy="60" r="4" fill="#083a52"/>
-            <circle cx="70" cy="60" r="4" fill="#083a52"/>
-            <path d="M48 72 q12 8 24 0" stroke="#083a52" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path d="M28 36 q32 -26 64 0 q-18 -6 -32 -6 q-14 0 -32 6z" fill="#fff"/>
+  <header>
+    <div class="container nav">
+      <a href="#hero" style="font-weight:600; text-decoration:none">
+        <div style="display:flex; align-items:center; gap:10px">
+          <!-- Ikona mózgu (SVG inline) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#06b6d4" />
+                <stop offset="100%" stop-color="#0f172a" />
+              </linearGradient>
+            </defs>
+            <circle cx="24" cy="24" r="22" fill="url(#g)" stroke="#0f172a" stroke-width="2" />
+            <circle cx="17" cy="20" r="2.2" fill="#ffffff"/>
+            <circle cx="31" cy="20" r="2.2" fill="#ffffff"/>
+            <circle cx="24" cy="28" r="2.2" fill="#ffffff"/>
+            <path d="M17 20 L24 28 L31 20" stroke="#ffffff" stroke-width="1.8" fill="none" />
+            <path d="M12 22c0-7 6-10 12-10s12 3 12 10c0 5-4 9-12 9s-12-4-12-9z" stroke="#ffffff" stroke-width="1.4" fill="none" opacity=".6"/>
           </svg>
+
+          <!-- NCN + pełna nazwa -->
+          <div style="display:flex; flex-direction:column; line-height:1.05">
+            <span style="font-weight:800; letter-spacing:.4px; font-size:16px">NCN</span>
+            <span style="font-size:11px; color:#475569">Naukowe Centrum Neuroróżnorodności</span>
+          </div>
         </div>
-        <h4>dr inż. Marlena Gąsior-Głogowska</h4>
-        <div class="role">Biomedycyna • VR/AI • dydaktyka</div>
-        <p class="bio">Badania amyloidów, spektroskopia Ramana, biofunkcjonalizacja biomateriałów. Projektuje scenariusze VR i metryki wdrożeń; prowadzi edukację i mentoring.</p>
-      </div>
+      </a>
+      <nav class="hide-sm">
+        <a href="#why">Dlaczego my</a>
+        <a href="#therapy">Terapie</a>
+        <a href="#services">Oferta</a>
+        <a href="#shop">Sklep</a>
+        <a href="#team">Zespół</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 
-      <!-- Sebastian — uśmiechnięty, ręce założone -->
-      <div class="card member">
-        <div class="avatar" title="Sebastian — smerf maruda (uśmiech + ręce)">
-          <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
-            <rect width="120" height="120" rx="60" fill="#29b9f6"/>
-            <circle cx="60" cy="62" r="28" fill="#b7f2ff"/>
-            <circle cx="50" cy="58" r="4.5" fill="#062f44"/>
-            <circle cx="70" cy="58" r="4.5" fill="#062f44"/>
-            <path d="M46 74 q14 6 28 0" stroke="#062f44" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path d="M42 82 q18 -6 36 0" stroke="#062f44" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <path d="M28 36 q32 -26 64 0" fill="#fff"/>
-          </svg>
+  <main>
+    <section id="hero" class="hero">
+      <div class="bg"></div>
+      <div class="container inner">
+        <h1>Spokój, fokus i realne wsparcie. Nauka + praktyka dla Ciebie i Twojego zespołu.</h1>
+        <p class="lead">Programy Neurodiversity@Work, sesje VR i neurofeedback, mentoring 1:1 oraz kursy online. Wszystko w jednym miejscu — <strong>NCN</strong>.</p>
+        <div style="margin-top:20px" class="stack">
+          <a class="btn primary" href="#therapy">Umów terapię / sesję</a>
+          <a class="btn ghost" href="#services">Oferta dla firm i szkół</a>
         </div>
-        <h4>dr inż. Sebastian Kraszewski</h4>
-        <div class="role">AI • neurofeedback • publikacje</div>
-        <p class="bio">Autor 40+ publikacji, doświadczenie grantowe. Warstwa AI/neurofeedback, ewaluacja i jakość naukowa programów NMA.</p>
+        <div class="muted" style="margin-top:12px;font-size:14px">Współpraca: Politechnika Wrocławska • Partnerzy biznesowi • NGO</div>
       </div>
+    </section>
 
-      <!-- Psycholog — smerfetka blond -->
-      <div class="card member">
-        <div class="avatar" title="Psycholog — smerfetka blond">
-          <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
-            <rect width="120" height="120" rx="60" fill="#21a8ea"/>
-            <path d="M18 72 q42 -42 84 0 v20 h-84z" fill="#f7d774"/>
-            <circle cx="60" cy="62" r="26" fill="#b7f2ff"/>
-            <circle cx="50" cy="60" r="4" fill="#083a52"/>
-            <circle cx="70" cy="60" r="4" fill="#083a52"/>
-            <path d="M48 72 q12 8 24 0" stroke="#083a52" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path d="M28 36 q32 -26 64 0" fill="#fff"/>
-          </svg>
+    <!-- TEAM -->
+    <section id="team" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#f8fafc">
+      <div class="container grid cards-3">
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="avatar">SK</div>
+            <div>
+              <div style="font-weight:600">dr inż. Sebastian Kraszewski</div>
+              <div class="muted" style="font-size:14px">Badania • Neurofeedback • AI</div>
+            </div>
+          </div>
+          <p class="muted" style="margin-top:10px;font-size:14px">Badacz i dydaktyk. 43+ publikacje, projekty wdrożeniowe, 700+ cytowań. Odpowiada za jakość metod i R&D.</p>
         </div>
-        <h4>Psycholog współpracujący</h4>
-        <div class="role">diagnoza/interwencje • zgodność formalna</div>
-        <p class="bio">Prowadzi kwalifikację, dokumentację i sesje psychologiczne; dba o zgodność z przepisami i etyką zawodu, we współpracy z kadrą NMA.</p>
-      </div>
-
-      <!-- Karol — smerf ważniak (okulary) -->
-      <div class="card member">
-        <div class="avatar" title="Karol — smerf ważniak">
-          <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
-            <rect width="120" height="120" rx="60" fill="#17a7e5"/>
-            <circle cx="60" cy="62" r="28" fill="#b7f2ff"/>
-            <circle cx="48" cy="60" r="6" fill="none" stroke="#072a3a" stroke-width="3"/>
-            <circle cx="72" cy="60" r="6" fill="none" stroke="#072a3a" stroke-width="3"/>
-            <line x1="54" y1="60" x2="66" y2="60" stroke="#072a3a" stroke-width="3"/>
-            <path d="M46 74 q14 6 28 0" stroke="#072a3a" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path d="M28 36 q32 -26 64 0" fill="#fff"/>
-          </svg>
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="avatar">MG</div>
+            <div>
+              <div style="font-weight:600">dr inż. Marlena Gąsior-Głogowska</div>
+              <div class="muted" style="font-size:14px">Edukacja • Etyka • Wdrożenia</div>
+            </div>
+          </div>
+          <p class="muted" style="margin-top:10px;font-size:14px">Praktyk i wykładowca. Projektuje programy szkoleń i wellbeing. Prowadzi warsztaty i sesje VR.</p>
         </div>
-        <h4>Karol Kiszło</h4>
-        <div class="role">Strategia • PR • Marketing • Rozwój biznesowy</div>
-        <p class="bio">Odpowiada za rozwój i wizerunek NeuroMentor Academy. Łączy komunikację, marketing i reklamę z długofalową strategią biznesową, dbając o spójność projektu i jego obecność w przestrzeni publicznej.</p>
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="avatar">KK</div>
+            <div>
+              <div style="font-weight:600">Karol Kiszło</div>
+              <div class="muted" style="font-size:14px">Produkt • Partnerstwa • Komunikacja</div>
+            </div>
+          </div>
+          <p class="muted" style="margin-top:10px;font-size:14px">Strateg i integrator technologii. Odpowiada za ofertę, współprace i doświadczenie użytkownika.</p>
+        </div>
       </div>
+    </section>
+  </main>
 
+  <footer>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> NCN – Naukowe Centrum Neuroróżnorodności</div>
+      <div class="muted"><a style="text-decoration:underline" href="#">Regulamin</a> • <a style="text-decoration:underline" href="#">Polityka prywatności</a> • <a style="text-decoration:underline" href="#">Cookies</a></div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section id="faq" class="section faq">
-  <div class="container">
-    <h2>FAQ</h2>
-    <details><summary>Czy to terapia?</summary><p>Programy edukacyjne i mentoring nie są terapią. Usługi psychologiczne realizuje licencjonowany psycholog; VR jest narzędziem pomocniczym.</p></details>
-    <details><summary>Czy wystawiacie certyfikaty?</summary><p>Tak — zaświadczenia/certyfikaty NMA (ścieżka edukacyjna). W części psychologicznej — dokumentacja zgodna z prawem.</p></details>
-    <details><summary>Jakie gogle VR?</summary><p>Meta Quest 2/3 (rekomendowane). W wersji edukacyjnej wystarczy 1 zestaw na grupę.</p></details>
-  </div>
-</section>
-
-<section id="kontakt" class="section">
-  <div class="container grid-2">
-    <div>
-      <h2>Kontakt</h2>
-      <p>Najprościej: wyślij maila z krótkim opisem potrzeb. Nie podawaj danych wrażliwych.</p>
-      <p><a class="btn" href="mailto:kontakt@nma.example?subject=NeuroMentor%20Academy%20—%20zapytanie">kontakt@nma.example</a></p>
-    </div>
-    <form class="card" action="https://formspree.io/f/yourid" method="POST">
-      <h3>Krótki brief</h3>
-      <label>Rola/instytucja<br><input name="rola" required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0b1118;color:var(--ink)"></label><br>
-      <label>Obszar (edukacja / psychologia / VR)<br><input name="obszar" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0b1118;color:var(--ink)"></label><br>
-      <label>Cel / problem<br><textarea name="cel" rows="4" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0b1118;color:var(--ink)"></textarea></label><br>
-      <label><input type="checkbox" required> Zgoda na kontakt (RODO)</label><br>
-      <button class="btn" type="submit">Wyślij</button>
-      <p class="lead" style="font-size:12px;margin-top:6px">Formularz jest opcjonalny — możesz też napisać zwykłego maila.</p>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <div class="container footer-wrap">
-    <div>
-      <div>© 2025 NeuroMentor Academy • Materiał edukacyjny • RODO-safe</div>
-      <div class="legal-mini">Karol Kiszło™ • Projekt i design autorski — wszelkie prawa zastrzeżone • Zakaz kopiowania i dystrybucji bez pisemnej zgody właściciela.</div>
-    </div>
-    <div class="footer-nav">
-      <a href="#oferta">Oferta</a>
-      <a href="#jak-dziala">Jak to działa</a>
-      <a href="#zespol">Zespół</a>
-      <a href="#faq">FAQ</a>
-      <a href="#kontakt">Kontakt</a>
-    </div>
-  </div>
-</footer>
-
-<a class="btn" style="position:fixed;right:20px;bottom:20px;background:#fff;color:#001018;border-radius:999px;font-weight:800;box-shadow:0 10px 28px rgba(0,0,0,.35)" href="#kontakt">Umów rozmowę</a>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
